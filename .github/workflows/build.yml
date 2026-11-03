@@ -167,6 +167,8 @@ jobs:
       - name: Check MinGW
         shell: bash
         run: gcc --version
+      - name: Refresh lockfile for Windows
+        run: flutter pub get
       - run: python scripts/build_windows.py ${{ matrix.arguments }}
       - uses: actions/upload-artifact@v4
         with:
